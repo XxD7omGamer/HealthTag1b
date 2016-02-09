@@ -1,0 +1,2 @@
+# FunEvents
+A playerevents plugin
