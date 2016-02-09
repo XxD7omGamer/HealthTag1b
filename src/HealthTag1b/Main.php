@@ -26,6 +26,6 @@ class Main extends PluginBase implements Listener{
 	
 	public function onMove(PlayerMoveEvent $event){
 		$player = $event->getPlayer();
-		$player->setNameTag("§e".$player->getName()."\n§l§2    ".$player->getHealth()."§c/§2".$player->getMaxHealth()"§r\n  §b§lHealth§cTag§b1b");
+		$player->setNameTag("§e".$player->getName()."\n§l§2    ".$player->getHealth()."§c/§2".$player->getMaxHealth());
 	}
 }
