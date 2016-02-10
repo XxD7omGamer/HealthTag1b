@@ -19,6 +19,8 @@ use pocketmine\item\Item;
 use pocketmine\event\player\PlayerMoveEvent;
 
 class Main extends PluginBase implements Listener{
+	
+	private $maxDefault=5;
 
 	public function onEnable(){
         	$this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -26,6 +28,22 @@ class Main extends PluginBase implements Listener{
 	
 	public function onMove(PlayerMoveEvent $event){
 		$player = $event->getPlayer();
-		$player->setNameTag("§e".$player->getName()."\n§l§2    ".$player->getHealth()."§c/§2".$player->getMaxHealth());
+		
+		$this->setMaxHealthDefault(20);
+	       
+		$player->setNameTag($this->set($player->getName()."\n§l§2    ".$player->getHealth()."§c/§2 : ".$this->getMaH());
+	       
 	}
+	private function set($set){
+	return Color::GOLD.$set;
+        }
+        // API
+        
+        public function setMaxHealthDefault($amount){
+        return $this->maxDefault = $amount;
+        }
+        public function getMaxH(){
+        return $this->maxDefault;
+        }
+        }
 }
